@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products - Elegant Moments Gifts</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: papayawhip;
+    }
+
+    .navbar {
+        background-color: #b30059;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 8px 15px;
+        border: 2px solid transparent;
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+
+    .navbar a:hover {
+        background-color: white;
+        color: #b30059;
+        border: 2px solid white;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #b30059;
+    }
+
+    h3 {
+        color: #800040;
+    }
+
+    .container {
+        display: flex;
+        gap: 25px;
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: stretch; 
+    }
+
+    .video-box {
+        width: 35%;
+    }
+
+    .right-section {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .card {
+        background: antiquewhite;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(179, 0, 89, 0.15);
+        transition: 0.3s;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .category-title {
+        cursor: pointer;
+        color: #b30059;
+        font-weight: bold;
+        margin: 12px 0;
+        font-size: 1.1rem;
+    }
+
+    .category-title:hover {
+        color: #800040;
+    }
+
+    .product-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .category {
+        display: none;
+    }
+
+    .category.active {
+        display: block;
+    }
+
+    .image-side {
+        text-align: center;
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .image-side img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: 0.3s;
+    }
+
+    .image-side img:hover {
+        transform: scale(1.08);
+    }
+
+    .btn {
+        margin-top: 8px;
+        padding: 8px 15px;
+        background: #b30059;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background: #800040;
+    }
+
+    .cart-box ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .cart-box li {
+        background: #ffe6f0;
+        margin: 8px 0;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    video {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(179, 0, 89, 0.2);
+    }
+
+    .card h3 {
+        margin-bottom: 15px;
+        color: #b30059;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #800040;
+        margin: 8px 0 5px;
+        font-size: 1.05rem;
+    }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="Products.html">Product</a></li>
+    <li><a href="business.html">Business</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<h1>Our Prices and Products</h1>
+
+<div class="container">
+
+    <div class="video-box card">
+        <h3>Watch Our Product In Action</h3>
+        <video controls>
+            <source src="f.mp4">
+        </video>
+    </div>
+
+    <div class="right-section">
+
+        <div class="card">
+            <h2>Select for Product Purchase</h2>
+
+            <h3 class="category-title" onclick="showCategory('wedding')">💍 Weddings</h3>
+            <h3 class="category-title" onclick="showCategory('birthday')">🎂 Birthdays</h3>
+            <h3 class="category-title" onclick="showCategory('anniversary')">❤️ Anniversaries</h3>
+            <h3 class="category-title" onclick="showCategory('gifts')">🎁 Gifts</h3>
+
+            <section id="wedding" class="category">
+                <div class="product-grid">
+                    <div class="image-side">
+                        <img src="wedding-centerpiece-ideas-erich-mcvey-primary-0724-6d2600fd1f1d4a0faaff86dda0cdf0be.jpg">
+                        <div class="price">Wedding Centerpiece - M 800</div>
+                        <button class="btn" onclick="addToCart('Wedding Centerpiece',800)">Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="birthday" class="category">
+                <div class="product-grid">
+                    <div class="image-side">
+                        <img src="bithdays.jpg">
+                        <div class="price">Birthday Gift Box - M 400</div>
+                        <button class="btn" onclick="addToCart('Birthday Gift Box',400)">Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="anniversary" class="category">
+                <div class="product-grid">
+                    <div class="image-side">
+                        <img src="happy_anniversary_red_love_sil_num.jpg">
+                        <div class="price">Anniversary Romantic Set - M 600</div>
+                        <button class="btn" onclick="addToCart('Anniversary Romantic Set',600)">Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gifts" class="category">
+                <div class="product-grid">
+                    <div class="image-side">
+                        <img src="another backes.jpg">
+                        <div class="price">Luxury Gift Box - M 250</div>
+                        <button class="btn" onclick="addToCart('Luxury Gift Box',250)">Add</button>
+                    </div>
+
+                    <div class="image-side">
+                        <img src="another gift.jpg">
+                        <div class="price">Personalized Gift Set - M 250</div>
+                        <button class="btn" onclick="addToCart('Personalized Gift Set',250)">Add</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="cart-box card">
+            <h3>🛒 Cart</h3>
+            <ul id="cart-list"></ul>
+            <h4 id="total">Total: M0</h4>
+            <button class="btn" onclick="checkout()">Checkout</button>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let cart = [];
+let total = 0;
+
+function showCategory(id) {
+    document.querySelectorAll('.category').forEach(cat => {
+        cat.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+}
+
+function addToCart(item, price) {
+    cart.push({name: item, price: price});
+    total += price;
+    updateCart();
+}
+
+function updateCart() {
+    let list = document.getElementById('cart-list');
+    list.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        let li = document.createElement('li');
+        li.innerHTML = item.name + " - M" + item.price +
+        " <button onclick='removeItem(" + index + ")' style='background:#b30059;color:white;border:none;border-radius:5px;padding:3px 8px;cursor:pointer;'>X</button>";
+        list.appendChild(li);
+    });
+
+    document.getElementById('total').innerText = "Total: M" + total;
+}
+
+function removeItem(index) {
+    total -= cart[index].price;
+    cart.splice(index, 1);
+    updateCart();
+}
+
+function checkout() {
+    if(total === 0) {
+        alert("Your cart is empty!");
+    } else {
+        alert("Thank you! Total to pay: M" + total);
+    }
+}
+
+</script>
+
+</body>
+</html>
